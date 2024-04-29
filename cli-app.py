@@ -2,13 +2,20 @@ print("Welcome to the Todo Application")
 todolist = []
 filepath = 'todolist.txt'
 
+def readfile(todolist, filepath):
+    with open(filepath, 'r') as file:
+        for line in file:
+            todolist.append(line.strip())
+
+#call readfile function so our todolist =[] is updated with latest list from the text file to begin with
+readfile(todolist, filepath)
+print("Latest updated todolist from db is : " , todolist)
 
 def write2file(todolist, filepath):
     with open(filepath, 'w') as file:
         for item in todolist:
             file.writelines(item + '\n')
     print("latest todolist is saved to the text file.")
-
 
 
 while True:
@@ -47,3 +54,6 @@ while True:
 
         case 'exit':
             break
+
+        case _:
+            print("Invalid command please try again!")
