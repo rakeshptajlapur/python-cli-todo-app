@@ -1,8 +1,18 @@
 print("Welcome to the Todo Application")
 todolist = []
+filepath = 'todolist.txt'
+
+
+def write2file(todolist, filepath):
+    with open(filepath, 'w') as file:
+        for item in todolist:
+            file.writelines(item + '\n')
+    print("latest todolist is saved to the text file.")
+
+
 
 while True:
-    user_prompt = input("Type the actions you would like to perform: add/edit/delete/show/save/exit !")
+    user_prompt = input("Type the actions you would like to perform: add/edit/delete/show/save/exit! : ")
     match user_prompt:
         case 'add':
            newtodoitem = input("Enter the new todo item : ")
@@ -32,7 +42,8 @@ while True:
             print("current todolist are as follows:")
             print(todolist)
 
-
+        case 'save':
+            write2file(todolist,filepath)
 
         case 'exit':
             break
