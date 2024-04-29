@@ -58,7 +58,7 @@ while True:
 
 
         case 'show':
-            print("current todolist are as follows:")
+            print("current todolist are as follows :")
             print(todolist)
 
         case 'save':
