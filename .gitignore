@@ -1,0 +1,14 @@
+# created by virtualenv automatically
+# Ignore virtual environment
+venv/
+pyvenv.cfg
+
+# Ignore PyCharm project files
+.idea/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore any other folders or files specific to your project setup
+Lib/
+Scripts/
