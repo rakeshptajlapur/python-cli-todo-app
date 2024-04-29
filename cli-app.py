@@ -26,6 +26,10 @@ while True:
            todolist.append(newtodoitem)
            print(todolist)
 
+           # update the todolist text file
+           print("New todo list item addedd successfully!")
+           write2file(todolist, filepath)
+
 
         case 'edit':
             print(todolist)
@@ -35,6 +39,10 @@ while True:
             itemafter_edit = input("Enter the todo item after edit :")
             todolist[todoitem2edit_index] = itemafter_edit
 
+            #update the todolist text file
+            print("Todo list text file data has been edited successfully!")
+            write2file(todolist,filepath)
+
 
         case 'delete':
             print(todolist)
@@ -43,6 +51,10 @@ while True:
             todoitem2delete_index = todolist.index(todoitem2delete)
             print(todolist[todoitem2delete_index], " has been deleted successfully!")
             del todolist[todoitem2delete_index]
+
+            # update the todolist text file
+            print("Todo list item deleted successfully!")
+            write2file(todolist, filepath)
 
 
         case 'show':
